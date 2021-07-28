@@ -1,0 +1,54 @@
+.header{
+    background-color: #333336;
+}
+.main-header{
+    background-color: #333336;
+    height: 48px;
+    display: flex;
+    width: 960px;
+    margin: 0 auto;
+}
+.logo img{
+    height: 30px;
+    width: 30px;
+    border-radius:3px ;
+    
+}
+.logo a{
+    cursor: pointer;
+    width: 164px;
+}
+.search-input{
+    padding-right: 15px;
+}
+#search{
+    padding: 0 0 0 34px;
+    background-image: url(../images/search.svg);
+    background-color: #444446;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    border-radius: 8px;
+    outline-width: 0;
+    border: 0;
+    height: 32px;
+    line-height: 28px;
+    color: #fff;
+}
+.player{
+    width: 490px;
+}
+.sing-up a{
+    font-weight: 700;
+    color: #ffff;
+    cursor: pointer;
+    font-size: 12.5px;
+    padding: 0 10px;
+}
+.sing-up:hover{
+    background-color: #444446;
+    opacity: 0.9;
+}
+.header-item{
+    display: flex;
+    align-items: center;
+}

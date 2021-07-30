@@ -3,7 +3,22 @@ import File from '../images/file.svg'
 import Send from '../images/send.svg'
 import { NavLink } from 'react-router-dom';
 import Msg from './msg';
+import React from 'react';
 const Chat = () =>{
+    let messages =[
+
+    ]
+
+    let GetMsg = React.createRef()
+
+    let GetMessages = () =>{
+        let msg = GetMsg.current.value
+        let Message = {
+            msg:msg 
+        }
+        messages.push(Message)
+    }
+
     return(
         <div className="chat">
             <div className="chat-header">
@@ -23,8 +38,8 @@ const Chat = () =>{
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/800px-Black_flag.svg.png" alt="" />
                 </div>
             </div>
-            <div className="chat-body">
-                <Msg />
+            <div className="chat-body"> 
+               {messages.map(el=><Msg message={el.msg} />)}
             </div>
             <div className="chat-input">
                 <div className="chat-media">
@@ -32,10 +47,10 @@ const Chat = () =>{
                 </div>
                 {/* <div className="chat-textarea" contentEditable='true' role='textbox' data-placeholder='Write a message' aria-multiline='true'></div> */}
                 <div className="chat-textarea">
-                    <input placeholder='Write a message...'></input>
+                    <input ref={GetMsg} placeholder='Write a message...'></input>
                 </div>
                 <div className="chat-send-btn">
-                    <img src={Send} alt="" />
+                    <img onClick={GetMessages} src={Send} alt="" />
                 </div>
             </div>
 

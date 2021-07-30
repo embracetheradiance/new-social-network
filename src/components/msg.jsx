@@ -1,5 +1,5 @@
 import '../styles/msg.css'
-const Msg = () =>{
+const Msg = (props) =>{
     return(
         <div className="chat-contain">
             <div className="chat--avatar">
@@ -10,7 +10,7 @@ const Msg = () =>{
                     <span>name</span>
                 </div>
                 <div className="chat-msg">
-                    <span>first message</span>
+                    <span>{props.message}</span>
                 </div>
                 
             </div>

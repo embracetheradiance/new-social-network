@@ -4,20 +4,12 @@ import '../styles/news.css'
 import Post from './post'
 const News = (props) => {
 
-//  let posts = [
-//     {text:'asdasdasd'},
-//     {text:'asdasdasd'},
-//     {text:'asdasdasd'},
-//     ]
     
     let GetText = React.createRef()
 
     let post = () => {
         let text = GetText.current.value
-        let  post = {
-            text: text,
-        }
-        props.state.addPost(post)
+        props.addPost(text)
  
     }
 

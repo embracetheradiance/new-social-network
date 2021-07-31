@@ -4,19 +4,12 @@ import Send from '../images/send.svg'
 import { NavLink } from 'react-router-dom';
 import Msg from './msg';
 import React from 'react';
-const Chat = () =>{
-    let messages =[
-
-    ]
-
+const Chat = (props) =>{
     let GetMsg = React.createRef()
 
     let GetMessages = () =>{
         let msg = GetMsg.current.value
-        let Message = {
-            msg:msg 
-        }
-        messages.push(Message)
+        props.addMessage(msg)
     }
 
     return(
@@ -39,7 +32,7 @@ const Chat = () =>{
                 </div>
             </div>
             <div className="chat-body"> 
-               {messages.map(el=><Msg message={el.msg} />)}
+               {props.state.messages.map(el=><Msg message={el.msg} />)}
             </div>
             <div className="chat-input">
                 <div className="chat-media">

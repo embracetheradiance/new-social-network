@@ -5,6 +5,7 @@ import News from '../images/news.svg'
 import Profile from '../images/profile.svg'
 import { rerender } from '../render'
 
+
 let state = {
     dialogData: [
         {id: 1,name: 'alex'},
@@ -15,13 +16,11 @@ let state = {
     posts:[
 
     ],
+    newPostText: '',
+    newMessageText: '',
     messages:[
         
     ],
-    // addPost(text){
-    //     this.posts.push(text)
-        
-    // },
     sideElements:[
         {id:1,name:'profile',to:'/me',src: Profile,sidename:'My Profile'},
         {id:2,name:'news',to:'/news',src: News,sidename:'News'},
@@ -31,19 +30,28 @@ let state = {
         
     ]
 }
-export let addPost = (text) =>{
+export let addPost = () =>{
     let textPost = {
-        text:text
+        text:state.newPostText
     }
     state.posts.push(textPost)
+    state.newPostText= ''
     rerender(state)
 }
-export let addMessage = (text) => {
+export let addMessage = () => {
     let Message = { 
-        msg:text
+        msg:state.newMessageText
     }
     state.messages.push(Message)
+    state.newMessageText= ''
     rerender(state)
 }
-
+export let updateNewPostText = (newText) => {
+    state.newPostText = newText
+    rerender(state)
+}
+export let updateNewMessageText = (Newtext) => {
+    state.newMessageText = Newtext
+    rerender(state)
+}
 export default state

@@ -8,11 +8,13 @@ const News = (props) => {
     let GetText = React.createRef()
 
     let post = () => {
-        let text = GetText.current.value
-        props.addPost(text)
+        props.addPost()
  
     }
-
+    let getNewText = () => {
+        let text = GetText.current.value
+        props.updateNewPostText(text)
+    }
 
 
     return (
@@ -20,7 +22,7 @@ const News = (props) => {
             <div className="new-post">
                 <img src={Avatar}></img>
                 <div style={{ width: '80%' }}>
-                    <input ref={GetText} type="text" placeholder='Whats new?' />
+                    <input ref={GetText} onChange={getNewText} type="text" value={props.state.newPostText} placeholder='Whats new?' />
                 </div>
 
                 <div className="add-post-btn">

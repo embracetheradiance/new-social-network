@@ -8,10 +8,12 @@ const Chat = (props) =>{
     let GetMsg = React.createRef()
 
     let GetMessages = () =>{
-        let msg = GetMsg.current.value
-        props.addMessage(msg)
+        props.addMessage()
     }
-
+    let getNewMessageText = () =>{
+        let msg = GetMsg.current.value
+        props.updateNewMessageText(msg)
+    }
     return(
         <div className="chat">
             <div className="chat-header">
@@ -40,7 +42,7 @@ const Chat = (props) =>{
                 </div>
                 {/* <div className="chat-textarea" contentEditable='true' role='textbox' data-placeholder='Write a message' aria-multiline='true'></div> */}
                 <div className="chat-textarea">
-                    <input ref={GetMsg} placeholder='Write a message...'></input>
+                    <input ref={GetMsg} onChange={getNewMessageText} value={props.state.newMessageText} placeholder='Write a message...'></input>
                 </div>
                 <div className="chat-send-btn">
                     <img onClick={GetMessages} src={Send} alt="" />

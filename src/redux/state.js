@@ -3,7 +3,6 @@ import Friends from '../images/friends.svg'
 import Settings from '../images/settings.svg'
 import News from '../images/news.svg'
 import Profile from '../images/profile.svg'
-import { rerender } from '../render'
 
 
 let state = {
@@ -30,6 +29,9 @@ let state = {
         
     ]
 }
+let rerender = () =>{
+
+}
 export let addPost = () =>{
     let textPost = {
         text:state.newPostText
@@ -53,5 +55,8 @@ export let updateNewPostText = (newText) => {
 export let updateNewMessageText = (Newtext) => {
     state.newMessageText = Newtext
     rerender(state)
+}
+export const subscribe = (observer) =>{
+    rerender = observer
 }
 export default state

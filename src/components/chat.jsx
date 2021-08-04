@@ -4,15 +4,18 @@ import Send from '../images/send.svg'
 import { NavLink } from 'react-router-dom';
 import Msg from './msg';
 import React from 'react';
+import { addMessageActCreator, updateNewMessageTextActCreator } from '../redux/state';
 const Chat = (props) =>{
     let GetMsg = React.createRef()
 
     let GetMessages = () =>{
-        props.addMessage()
+        props.dispatch(addMessageActCreator())
+        
     }
     let getNewMessageText = () =>{
         let msg = GetMsg.current.value
-        props.updateNewMessageText(msg)
+        props.dispatch(updateNewMessageTextActCreator(msg))
+       
     }
     return(
         <div className="chat">
@@ -23,7 +26,7 @@ const Chat = (props) =>{
                     </div>
                 </NavLink>
                 <div className="chat-name">
-                    <span>Name</span>
+                    <span>{props.name}</span>
                     <div className='status'>
                         <span>last seen recently</span>
                     </div>

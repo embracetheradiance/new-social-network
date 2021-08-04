@@ -14,8 +14,8 @@ const MainPage = (props) =>{
 
                     <Route path='/me' component=''></Route>
                     <Route path='/messages' render={ () => <Messages state={props.state}/>}></Route>
-                    <Route path='/news' render={() => (<News state={props.state} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />)}></Route>
-                    <Route path='/chat/alex' render={() => (<Chat state={props.state} addMessage={props.addMessage} updateNewMessageText={props.updateNewMessageText} />)}></Route>
+                    <Route path='/news' render={() => (<News state={props.state} dispatch={props.dispatch}  />)}></Route>
+                    <Route path='/chat/alex' render={() => (<Chat name={props.state.dialogData[0].name} state={props.state} dispatch={props.dispatch}/>)}></Route>
                     
 
                 </div>

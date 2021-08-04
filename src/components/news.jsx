@@ -1,5 +1,6 @@
 import React from 'react'
 import Avatar from '../images/white-logo.jpg'
+import { addPostActCreator, updateNewPostTextActCreator } from '../redux/state'
 import '../styles/news.css'
 import Post from './post'
 const News = (props) => {
@@ -8,12 +9,13 @@ const News = (props) => {
     let GetText = React.createRef()
 
     let post = () => {
-        props.addPost()
- 
+        props.dispatch(addPostActCreator())
+        
     }
     let getNewText = () => {
         let text = GetText.current.value
-        props.updateNewPostText(text)
+        props.dispatch(updateNewPostTextActCreator(text))
+       
     }
 
 

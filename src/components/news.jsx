@@ -6,14 +6,13 @@ import Post from './post'
 const News = (props) => {
 
     
-    let GetText = React.createRef()
 
     let post = () => {
         props.dispatch(addPostActCreator())
         
     }
-    let getNewText = () => {
-        let text = GetText.current.value
+    let getNewText = (e) => {
+        let text = e.target.value
         props.dispatch(updateNewPostTextActCreator(text))
        
     }
@@ -24,7 +23,7 @@ const News = (props) => {
             <div className="new-post">
                 <img src={Avatar}></img>
                 <div style={{ width: '80%' }}>
-                    <input ref={GetText} onChange={getNewText} type="text" value={props.state.newPostText} placeholder='Whats new?' />
+                    <input onChange={getNewText} type="text" value={props.state.newPostText} placeholder='Whats new?' />
                 </div>
 
                 <div className="add-post-btn">

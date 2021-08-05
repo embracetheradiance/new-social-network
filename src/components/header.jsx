@@ -6,9 +6,9 @@ const Header = () =>{
         <div className="header">
             <div className='main-header'>
                 <div className="logo header-item">
-                    <a to='/news'>
+                    <NavLink to='/news'>
                         <img className='header-item' src={Logo} alt="Logo" />
-                    </a>
+                    </NavLink>
                 </div>
                 <div className="search-input header-item">
                     <input id='search' placeholder='Search'></input>

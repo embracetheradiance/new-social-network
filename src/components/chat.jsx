@@ -6,14 +6,13 @@ import Msg from './msg';
 import React from 'react';
 import { addMessageActCreator, updateNewMessageTextActCreator } from '../redux/state';
 const Chat = (props) =>{
-    let GetMsg = React.createRef()
 
     let GetMessages = () =>{
         props.dispatch(addMessageActCreator())
         
     }
-    let getNewMessageText = () =>{
-        let msg = GetMsg.current.value
+    let getNewMessageText = (e) =>{
+        let msg = e.target.value
         props.dispatch(updateNewMessageTextActCreator(msg))
        
     }
@@ -45,7 +44,7 @@ const Chat = (props) =>{
                 </div>
                 {/* <div className="chat-textarea" contentEditable='true' role='textbox' data-placeholder='Write a message' aria-multiline='true'></div> */}
                 <div className="chat-textarea">
-                    <input ref={GetMsg} onChange={getNewMessageText} value={props.state.newMessageText} placeholder='Write a message...'></input>
+                    <input onChange={getNewMessageText} value={props.state.newMessageText} placeholder='Write a message...'></input>
                 </div>
                 <div className="chat-send-btn">
                     <img onClick={GetMessages} src={Send} alt="" />

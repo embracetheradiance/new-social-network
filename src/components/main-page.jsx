@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom"
+import { Route } from "react-router-dom"
 import Chat from "./chat";
 import Messages from "./messages";
 import News from "./news"
@@ -8,7 +8,7 @@ import SideBar from "./sidebar"
 const MainPage = (props) =>{
     return(
         <div className='main-page' style={{ width: '966px', margin: '0 auto', display: 'flex' }}>
-            <BrowserRouter>
+           
                 <SideBar state={props.state} />
                 <div className="page-body" style={{ width: '795px' }}>
 
@@ -19,7 +19,7 @@ const MainPage = (props) =>{
                     
 
                 </div>
-            </BrowserRouter>
+         
 
         </div>
     );

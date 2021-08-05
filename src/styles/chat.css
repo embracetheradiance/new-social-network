@@ -47,6 +47,7 @@
 .chat-body{
     width: 550px;
     min-height: 79vh;
+    max-height: auto;
     background-color: #333336;
 }
 .chat-input img{

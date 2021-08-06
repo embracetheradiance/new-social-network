@@ -1,7 +1,7 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
-const newsReducer = (action,state) =>{
+const newsReducer = (state,action) =>{
     switch(action.type){
         case UPDATE_NEW_POST_TEXT:
             state.newPostText = action.newText

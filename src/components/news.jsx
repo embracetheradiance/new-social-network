@@ -1,6 +1,6 @@
 import React from 'react'
 import Avatar from '../images/white-logo.jpg'
-import { addPostActCreator, updateNewPostTextActCreator } from '../redux/state'
+import { addPostActCreator, updateNewPostTextActCreator } from '../redux/news-reducer'
 import '../styles/news.css'
 import Post from './post'
 const News = (props) => {
@@ -23,7 +23,7 @@ const News = (props) => {
             <div className="new-post">
                 <img src={Avatar}></img>
                 <div style={{ width: '80%' }}>
-                    <input onChange={getNewText} type="text" value={props.state.newPostText} placeholder='Whats new?' />
+                    <input onChange={getNewText} type="text" value={props.state.newsPage.newPostText} placeholder='Whats new?' />
                 </div>
 
                 <div className="add-post-btn">
@@ -32,8 +32,7 @@ const News = (props) => {
 
             </div>
             {
-            
-                props.state.posts.map(Element => <Post text={Element.text} />)
+                props.state.newsPage.posts.map(Element => <Post text={Element.text} />)
             }
         </div>
     );

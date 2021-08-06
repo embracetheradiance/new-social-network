@@ -4,7 +4,7 @@ import Send from '../images/send.svg'
 import { NavLink } from 'react-router-dom';
 import Msg from './msg';
 import React from 'react';
-import { addMessageActCreator, updateNewMessageTextActCreator } from '../redux/state';
+import { addMessageActCreator, updateNewMessageTextActCreator } from '../redux/dialog-reducer'
 const Chat = (props) =>{
 
     let GetMessages = () =>{
@@ -36,7 +36,7 @@ const Chat = (props) =>{
                 </div>
             </div>
             <div className="chat-body"> 
-               {props.state.messages.map(el=><Msg message={el.msg} />)}
+               {props.state.dialogPage.messages.map(el=><Msg message={el.msg} />)}
             </div>
             <div className="chat-input">
                 <div className="chat-media">
@@ -44,7 +44,7 @@ const Chat = (props) =>{
                 </div>
                 {/* <div className="chat-textarea" contentEditable='true' role='textbox' data-placeholder='Write a message' aria-multiline='true'></div> */}
                 <div className="chat-textarea">
-                    <input onChange={getNewMessageText} value={props.state.newMessageText} placeholder='Write a message...'></input>
+                    <input onChange={getNewMessageText} value={props.state.dialogPage.newMessageText} placeholder='Write a message...'></input>
                 </div>
                 <div className="chat-send-btn">
                     <img onClick={GetMessages} src={Send} alt="" />

@@ -7,10 +7,7 @@ import dialogReducer from './dialog-reducer'
 import newsReducer from './news-reducer'
 import sidebarReducer from './sidebar-reducer'
 
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT ='UPDATE-NEW-MESSAGE-TEXT'
+
 
 let store = {
     _state :{
@@ -60,39 +57,7 @@ let store = {
        this._state.sideBar = sidebarReducer(this._state.sideBar, action)
        this._rerender(this._state)
 
-        // if (action.type === 'ADD-POST'){
-        //     let textPost = {
-        //         text:this._state.newsPage.newPostText
-        //     }
-        //     this._state.newsPage.posts.push(textPost)
-        //     this._state.newsPage.newPostText= ''
-        //     this._rerender(this._state)
-        // } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
-        //     this._state.newsPage.newPostText = action.newText
-        //     this._rerender(this._state)
-        // } else if (action.type === 'ADD-MESSAGE'){
-        //     let Message = { 
-        //         msg:this._state.dialogPage.newMessageText
-        //     }
-        //     this._state.dialogPage.messages.push(Message)
-        //     this._state.dialogPage.newMessageText= ''
-        //     this._rerender(this._state)
-        // } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
-        //     this._state.dialogPage.newMessageText = action.newText
-        //     this._rerender(this._state)
-        // }
     }
 }
-// export const addPostActCreator = () => ({type: ADD_POST})
-    
-// export const updateNewPostTextActCreator = (text) => ({
-//     type: UPDATE_NEW_POST_TEXT,
-//     newText: text
-// })
-// export const addMessageActCreator = () => ({type:ADD_MESSAGE})
-// export const updateNewMessageTextActCreator = (msg) => ({
-//     type: UPDATE_NEW_MESSAGE_TEXT,
-//     newText: msg
-// })
 
 export default store

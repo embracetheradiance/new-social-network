@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/header';
 import MainPage from './components/main-page';
-import store from './redux/state'
+import store from './redux/redux-store'
 function App() {
 
   return (

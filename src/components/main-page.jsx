@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom"
-import Chat from "./chat";
+import ChatContainer from "./chatContainer";
 import Messages from "./messages";
-import News from "./news"
+import NewsContainer from "./newsContainer";
 import SideBar from "./sidebar"
 
 
@@ -14,9 +14,8 @@ const MainPage = (props) =>{
 
                     <Route path='/me' component=''></Route>
                     <Route path='/messages' render={ () => <Messages state={props.state}/>}></Route>
-                    <Route path='/news' render={() => (<News state={props.state} dispatch={props.dispatch}  />)}></Route>
-                    <Route path='/chat/alex' render={() => (<Chat name={props.state.dialogPage.dialogData[0].name} state={props.state} dispatch={props.dispatch}/>)}></Route>
-                    
+                    <Route path='/news' render={() => (<NewsContainer store={props.store}   />)}></Route>
+                    <Route path='/chat/alex' render={() => (<ChatContainer store={props.store}/>)}></Route>
 
                 </div>
          

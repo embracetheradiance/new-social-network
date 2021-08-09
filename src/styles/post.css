@@ -27,6 +27,11 @@
 .post-like{
     padding: 0 20px;
 }
+.like-btns{
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
 .like-btns img{
     height: 25px;
     width: 25px;

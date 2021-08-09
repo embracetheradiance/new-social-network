@@ -14,8 +14,8 @@ const MainPage = (props) =>{
 
                     <Route path='/me' component=''></Route>
                     <Route path='/messages' render={ () => <Messages state={props.state}/>}></Route>
-                    <Route path='/news' render={() => (<NewsContainer store={props.store}   />)}></Route>
-                    <Route path='/chat/alex' render={() => (<ChatContainer store={props.store}/>)}></Route>
+                    <Route path='/news' render={() => (<NewsContainer/>)}></Route>
+                    <Route path='/chat/alex' render={() => (<ChatContainer/>)}></Route>
 
                 </div>
          

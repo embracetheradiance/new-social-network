@@ -6,9 +6,9 @@ function App(props) {
 
   return (
     <div>
-      <body style={{backgroundColor:'#222226',minHeight:'100vh',maxHeight:'auto'}}>
+      <body style={{backgroundColor:'#222226',minHeight:'100vh',maxHeight:'auto' }}>
         <Header />
-        <MainPage state={store.getState()} store={props.store} dispatch={store.dispatch.bind(store)}/>
+        <MainPage state={store.getState()} />
       </body>
     </div>
   );

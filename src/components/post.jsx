@@ -18,7 +18,8 @@ const Post = (props) =>{
                 </div>
                 <div className="post-like">
                     <div className="like-btns">
-                        <img src={Like} alt="" />
+                        <img src={Like} alt="" /> 
+                        <span>{props.likes}</span>
                         <img id='comm' className='space' src={Comment} alt="" />
                         <img className='space' src={Repost} alt="" />
                     </div>

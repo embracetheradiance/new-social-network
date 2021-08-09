@@ -31,7 +31,7 @@ const News = (props) => {
 
             </div>
             {
-                props.posts.map(Element => <Post text={Element.text} />)
+                props.posts.map(Element => <Post text={Element.text}/>)
             }
         </div>
     );

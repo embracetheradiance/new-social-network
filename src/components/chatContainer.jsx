@@ -2,18 +2,29 @@ import '../styles/chat.css'
 import React from 'react';
 import { addMessageActCreator, updateNewMessageTextActCreator } from '../redux/dialog-reducer'
 import Chat from './chat';
-const ChatContainer = (props) =>{
-    let state = props.store.getState() 
+import storeContext from '../storeContext';
+const ChatContainer = () =>{
+    
+    return(
+    <storeContext.Consumer>{
+        (store) =>{
+            let state = store.getState() 
 
 
-    let GetMessages = () =>{
-        props.store.dispatch(addMessageActCreator())
-        
+            let GetMessages = () =>{
+                store.dispatch(addMessageActCreator())
+                
+            }
+            let getNewMessageText = (msg) =>{
+                store.dispatch(updateNewMessageTextActCreator(msg))
+               
+            }
+            return  <Chat sendMessage={GetMessages} updateNewMessageText={getNewMessageText} messages={state.dialogPage.messages} NewMessageText={state.dialogPage.newMessageText} name={state.dialogPage.dialogData[0].name} />
+        }    
     }
-    let getNewMessageText = (msg) =>{
-        props.store.dispatch(updateNewMessageTextActCreator(msg))
-       
-    }
-    return(<Chat sendMessage={GetMessages} updateNewMessageText={getNewMessageText} messages={state.dialogPage.messages} NewMessageText={state.dialogPage.newMessageText} name={state.dialogPage.dialogData[0].name} />);
+    </storeContext.Consumer>
+    );
+    
+   
 }
 export default ChatContainer

@@ -11,19 +11,20 @@ let initialState = {
 const newsReducer = (state = initialState,action) =>{
     switch(action.type){
         case UPDATE_NEW_POST_TEXT:{
-            let stateCopy = {...state}
-            stateCopy.newPostText = action.newText
-            return stateCopy;
+            return{
+                ...state,
+                newPostText : action.newText
+            }
         }    
         case ADD_POST: {
             let textPost = {
                 text:state.newPostText
             }
-            let stateCopy = {...state}
-            stateCopy.posts = [...state.posts]
-           stateCopy.posts.push(textPost)
-           stateCopy.newPostText= ''
-           return stateCopy;
+            return{
+                ...state,
+                posts : [...state.posts, textPost],
+                newPostText: ''
+            }
         }
         default:
             return state;

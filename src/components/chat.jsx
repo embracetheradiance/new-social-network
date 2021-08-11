@@ -43,7 +43,7 @@ const Chat = (props) =>{
                 </div>
                 {/* <div className="chat-textarea" contentEditable='true' role='textbox' data-placeholder='Write a message' aria-multiline='true'></div> */}
                 <div className="chat-textarea">
-                    <input onChange={getNewMessageText} value={props.newMessageText} placeholder='Write a message...'></input>
+                    <input onChange={getNewMessageText} value={props.NewMessageText} placeholder='Write a message...'></input>
                 </div>
                 <div className="chat-send-btn">
                     <img onClick={GetMessages} src={Send} alt="" />

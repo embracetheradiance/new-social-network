@@ -3,29 +3,6 @@ import { addPostActCreator, updateNewPostTextActCreator } from '../redux/news-re
 import '../styles/news.css'
 import News from './news'
 import { connect } from 'react-redux'
-// const NewsContainer = () => {
-    
-
-
-//     return (
-//         <storeContext.Consumer>{
-//             (store) => {
-//                 let state = store.getState()
-    
-
-//                 let post = () => {
-//                     store.dispatch(addPostActCreator())
-                    
-//                 }
-//                 let getNewText = (text) => {
-//                    store.dispatch(updateNewPostTextActCreator(text))
-                   
-//                 }
-//                 return <News addPost={post} updateNewPostText={getNewText} posts={state.newsPage.posts} newPostText={state.newsPage.newPostText}/> 
-//             }   
-//         }     
-//         </storeContext.Consumer>
-//     );
     let mapStateToProps = (state) =>{
         return {
             posts : state.newsPage.posts,
@@ -35,10 +12,10 @@ import { connect } from 'react-redux'
     let mapDispatchToProps = (dispatch) =>{
         return {
             addPost : () => {
-                dispatch(post)
+                dispatch(addPostActCreator())
             },
             updateNewPostText : (text) => {
-                dispatch(getNewText(text))
+                dispatch(updateNewPostTextActCreator(text))
             }
         }
     }

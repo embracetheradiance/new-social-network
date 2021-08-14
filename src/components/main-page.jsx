@@ -3,6 +3,7 @@ import ChatContainer from "./chatContainer";
 import Messages from "./messages";
 import NewsContainer from "./newsContainer";
 import SideBar from "./sidebar"
+import UsersContainer from "./users-friends/UsersContainer";
 
 
 const MainPage = (props) =>{
@@ -16,6 +17,7 @@ const MainPage = (props) =>{
                     <Route path='/messages' render={ () => <Messages state={props.state}/>}></Route>
                     <Route path='/news' render={() => (<NewsContainer/>)}></Route>
                     <Route path='/chat/alex' render={() => (<ChatContainer/>)}></Route>
+                    <Route path='/friends' render={() =>(<UsersContainer />)}></Route>
 
                 </div>
          

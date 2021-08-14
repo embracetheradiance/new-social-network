@@ -34,8 +34,10 @@ const Chat = (props) =>{
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/800px-Black_flag.svg.png" alt="" />
                 </div>
             </div>
-            <div className="chat-body"> 
-               {props.messages.map(el=><Msg message={el.msg} />)}
+            <div className="chat-body">
+                <div className="chat--body">
+                    {props.messages.map(el=><Msg message={el.msg} />)}
+                </div>
             </div>
             <div className="chat-input">
                 <div className="chat-media">

@@ -46,9 +46,16 @@
 }
 .chat-body{
     width: 550px;
-    min-height: 79vh;
-    max-height: auto;
+    height: 79vh;
     background-color: #333336;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.chat--body{
+    height: inherit;
+    overflow-y: scroll;
+    display: grid;
+    align-content: end;
 }
 .chat-input img{
     width: 24px;

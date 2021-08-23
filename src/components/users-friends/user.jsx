@@ -1,10 +1,11 @@
 import React from 'react'
+import Avatar from '../../images/white-logo.jpg'
 const User = (props) =>{
     
     return(
         <div className="user" key={props.id}>
             <div className="user-avatar">
-               <img src={props.avatar} alt="avatar" /> 
+               <img src={props.avatar ? props.avatar === null : Avatar} alt="avatar" /> 
             </div>
             <div className="user-info">
                 <div className="user-fullname">
